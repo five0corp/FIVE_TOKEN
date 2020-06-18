@@ -4,7 +4,6 @@ import "../erc20/IERC20.sol";
 import "../math/MathOverflowGuard.sol";
 
 /**
- * @five
  * Implementation of the 'IERC20' interface.
  *
  * Base code from (https://forum.zeppelin.solutions/t/how-to-implement-erc20-supply-mechanisms/226).*
