@@ -11,13 +11,11 @@ contract FiveToken is ERC20Extended {
     string public constant name = "FIVE TOKEN";
     string public constant symbol = "FVT";
     uint public constant decimals = 18;
-    uint public constant INITIAL_SUPPLY = 30000 * (10 ** decimals);
+    uint public constant INITIAL_SUPPLY = 300000000 * (10 ** uint256(decimals));
 
 
     constructor() public {
         _mint(msg.sender, INITIAL_SUPPLY);
     }
-
-
 
 }

@@ -2,11 +2,11 @@ pragma solidity ^0.5.2;
 
 import "../erc20/ERC20.sol";
 import "./Lockable.sol";
-import "../lifecycle/Pausable.sol";
+import "./Pausable.sol";
 
 /**
- * @title Pausable & Lockable token
- * @dev ERC20 modified with pausable & lockable transfers.
+ * @title ERC20Extended for FIVE TOKEN
+ * @dev ERC20 modified with needed transfers. 1. pausable 2. lockable
  */
 contract ERC20Extended is ERC20, Pausable, Lockable {
 
