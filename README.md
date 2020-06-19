@@ -8,6 +8,7 @@ sections:
   - title: Extensions
     contracts:
       - ERC20Burnable
+      - TokenTimelock
 ---
 
 This code released for Five Token ( https://five-corporation.com ) , symbol is FVT.

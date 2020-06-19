@@ -1,11 +1,11 @@
 pragma solidity ^0.5.0;
 
 /**
- * @dev Collection of functions related to the address type,
+ * Collection of functions related to the address type,
  */
 library Address {
     /**
-     * @dev Returns true if `account` is a contract.
+     * Returns true if 'account' is a contract.
      *
      * This test is non-exhaustive, and there may be false-negatives: during the
      * execution of a contract's constructor, its address will be reported as

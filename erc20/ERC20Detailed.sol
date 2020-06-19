@@ -3,7 +3,7 @@ pragma solidity ^0.5.0;
 import "./IERC20.sol";
 
 /**
- * @dev Optional functions from the ERC20 standard.
+ * Optional functions from the ERC20 standard.
  */
 contract ERC20Detailed is IERC20 {
     string private _name;
@@ -11,7 +11,7 @@ contract ERC20Detailed is IERC20 {
     uint8 private _decimals;
 
     /**
-     * @dev Sets the values for 'name', 'symbol', and 'decimals'. All three of
+     * Sets the values for 'name', 'symbol', and 'decimals'. All three of
      * these values are immutable: they can only be set once during
      * construction.
      */
@@ -22,14 +22,14 @@ contract ERC20Detailed is IERC20 {
     }
 
     /**
-     * @dev Returns the name of the token.
+     * Returns the name of the token.
      */
     function name() public view returns (string memory) {
         return _name;
     }
 
     /**
-     * @dev Returns the symbol of the token, usually a shorter version of the
+     * Returns the symbol of the token, usually a shorter version of the
      * name.
      */
     function symbol() public view returns (string memory) {
@@ -37,7 +37,7 @@ contract ERC20Detailed is IERC20 {
     }
 
     /**
-     * @dev Returns the number of decimals used to get its user representation.
+     * Returns the number of decimals used to get its user representation.
      * For example, if 'decimals' equals '2', a balance of '505' tokens should
      * be displayed to a user as '5,05' ('505 / 10 ** 2').
      *

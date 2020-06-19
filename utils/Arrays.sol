@@ -7,12 +7,12 @@ import "../math/Math.sol";
  */
 library Arrays {
    /**
-     * Searches a sorted `array` and returns the first index that contains
-     * a value greater or equal to `element`. If no such index exists (i.e. all
-     * values in the array are stictly less than `element`), the array length is
+     * Searches a sorted 'array' and returns the first index that contains
+     * a value greater or equal to 'element'. If no such index exists (i.e. all
+     * values in the array are stictly less than 'element'), the array length is
      * returned. Time complexity O(log n).
      *
-     * `array` is expected to be sorted in ascending order, and to contain no
+     * 'array' is expected to be sorted in ascending order, and to contain no
      * repeated elements.
      */
     function findUpperBound(uint256[] storage array, uint256 element) internal view returns (uint256) {
@@ -35,7 +35,7 @@ library Arrays {
             }
         }
 
-        // At this point `low` is the exclusive upper bound. We will return the inclusive upper bound.
+        // At this point 'low' is the exclusive upper bound. We will return the inclusive upper bound.
         if (low > 0 && array[low - 1] == element) {
             return low - 1;
         } else {

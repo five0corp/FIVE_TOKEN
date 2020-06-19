@@ -6,7 +6,7 @@ import "../utils/Address.sol";
 
 /**
  * @title SafeERC20
- * @dev Wrappers around ERC20 operations that throw on failure (when the token
+ * Wrappers around ERC20 operations that throw on failure (when the token
  * contract returns false). Tokens that return no value (and instead revert or
  * throw on failure) are also supported, non-reverting calls are assumed to be
  * successful.
@@ -47,7 +47,7 @@ library SafeERC20 {
     }
 
     /**
-     * @dev Imitates a Solidity high-level call (i.e. a regular function call to a contract), relaxing the requirement
+     * Imitates a Solidity high-level call (i.e. a regular function call to a contract), relaxing the requirement
      * on the return value: the return value is optional (but if data is returned, it must not be false).
      * @param token The token targeted by the call.
      * @param data The call data (encoded using abi.encode or one of its variants).
