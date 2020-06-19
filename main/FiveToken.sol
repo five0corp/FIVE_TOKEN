@@ -24,10 +24,10 @@ contract FiveToken is ERC20, ERC20Detailed,ERC20Burnable {
     }
 
     /**
-     * TokenTimeLock function
+     * TokenTimelock function
      */
     function lockToken(address beneficiary, uint256 amount, uint256 releaseTime) public {
-        TokenLock lockContract = new TokenTimelock(this, beneficiary, releaseTime );
+        TokenTimelock lockContract = new TokenTimelock(this, beneficiary, releaseTime );
 
         transfer(address(lockContract), amount);
         lockStatus[beneficiary] = address(lockContract);
