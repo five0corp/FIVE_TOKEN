@@ -4,31 +4,14 @@ pragma solidity ^0.5.2;
  * @title Lockable Token
  */
 contract Lockable {
-    bool public tokenTransfer;
     address public owner;
 
-    /**
-     * @dev They can transfer even if tokenTranser flag is false.
-     */
     mapping(address => bool) public unlockAddress;
-
-    /**
-     * @dev They cannot transfer even if tokenTransfer flag is true.
-     */
     mapping(address => bool) public lockAddress;
 
     event Locked(address lockAddress, bool status);
     event Unlocked(address unlockedAddress, bool status);
 
-    /**
-     * @dev check whether can tranfer tokens or not.
-     */
-    modifier isTokenTransfer {
-        if(!tokenTransfer) {
-            require(unlockAddress[msg.sender]);
-        }
-        _;
-    }
 
     /**
      * @dev check whether registered in lockAddress or not
@@ -47,7 +30,6 @@ contract Lockable {
     constructor()
     public
     {
-        tokenTransfer = false;
         owner = msg.sender;
     }
 
