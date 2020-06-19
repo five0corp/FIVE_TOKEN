@@ -27,6 +27,7 @@ contract Lockable {
         if(!tokenTransfer) {
             require(unlockAddress[msg.sender]);
         }
+        _;
     }
 
     /**
@@ -34,11 +35,13 @@ contract Lockable {
      */
     modifier checkLock {
         require(!lockAddress[msg.sender]);
+        _;
     }
 
     modifier isOwner
     {
         require(owner == msg.sender);
+        _;
     }
 
     constructor()

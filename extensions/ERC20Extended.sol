@@ -68,7 +68,7 @@ contract ERC20Extended is ERC20, Pausable, Lockable {
         return super.transfer(to, value);
     }
 
-    function transferFrom(address from, address to, uint256 value) public isTokenTransfer checkLockwhenNotPaused returns (bool) {
+    function transferFrom(address from, address to, uint256 value) public isTokenTransfer checkLock whenNotPaused returns (bool) {
         return super.transferFrom(from, to, value);
     }
 
