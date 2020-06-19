@@ -1,33 +1,30 @@
-pragma solidity ^0.5.0;
+pragma solidity ^0.5.2;
 
-import "../erc20/ERC20.sol";
-import "../erc20/ERC20Detailed.sol";
-import "../extensions/ERC20Burnable.sol";
-import "../extensions/TokenTimelock.sol";
+import "../erc20/ERC20Pausable.sol";
+import "../ownership/Ownable.sol";
+import "../extensions/TokenLock.sol";
 
 /**
  * @title FiveToken
  */
-contract FiveToken is ERC20, ERC20Detailed,ERC20Burnable {
-    uint8 public constant DECIMALS = 18;
-    uint256 public constant INITIAL_SUPPLY = 300000000 * (10 ** uint256(DECIMALS));
+contract FiveToken is ERC20Pausable, Ownable {
+
+    string public constant name = "FIVE TOKEN";
+    string public constant symbol = "FVT";
+    uint public constant decimals = 18;
+    uint public constant INITIAL_SUPPLY = 30000 * (10 ** decimals);
 
     // Lock
     mapping (address => address) public lockStatus;
     event Lock(address _receiver, uint256 _amount);
 
-    /**
-     * Constructor that gives msg.sender all of existing tokens.
-     */
-    constructor () public ERC20Detailed("FiveToken", "FVT", DECIMALS) {
-        _mint(msg.sender, INITIAL_SUPPLY);
+    constructor() public {
+    _mint(msg.sender, INITIAL_SUPPLY);
     }
 
-    /**
-     * TokenTimelock function
-     */
-    function lockToken(address beneficiary, uint256 amount, uint256 releaseTime) public {
-        TokenTimelock lockContract = new TokenTimelock(this, beneficiary, releaseTime );
+
+    function LockToken(address beneficiary, uint256 amount, uint256 releaseTime, bool isOwnable) onlyOwner public {
+        TokenLock lockContract = new TokenLock(this, beneficiary, msg.sender, releaseTime, isOwnable);
 
         transfer(address(lockContract), amount);
         lockStatus[beneficiary] = address(lockContract);

@@ -1,26 +1,28 @@
-pragma solidity ^0.5.0;
+pragma solidity ^0.5.2;
 
 /**
- * Standard math utilities missing in the Solidity language.
+ * @title Math
+ * @dev Assorted math operations
  */
 library Math {
     /**
-     * Returns the largest of two numbers.
+     * @dev Returns the largest of two numbers.
      */
     function max(uint256 a, uint256 b) internal pure returns (uint256) {
         return a >= b ? a : b;
     }
 
     /**
-     * Returns the smallest of two numbers.
+     * @dev Returns the smallest of two numbers.
      */
     function min(uint256 a, uint256 b) internal pure returns (uint256) {
         return a < b ? a : b;
     }
 
     /**
-     * Returns the average of two numbers. The result is rounded towards
-     * zero.
+     * @dev Calculates the average of two numbers. Since these are integers,
+     * averages of an even and odd number cannot be represented, and will be
+     * rounded down.
      */
     function average(uint256 a, uint256 b) internal pure returns (uint256) {
         // (a + b) / 2 can overflow, so we distribute
