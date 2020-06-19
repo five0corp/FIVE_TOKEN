@@ -15,7 +15,6 @@ contract ERC20Extended is ERC20, Pausable, Lockable {
      */
     bool public adminMode;
 
-    event TokenBurned(address burnAddress, uint256 amountOfTokens);
     event SetTokenTransfer(bool transfer);
     event SetAdminMode(bool adminMode);
 
@@ -25,21 +24,6 @@ contract ERC20Extended is ERC20, Pausable, Lockable {
         _;
     }
 
-
-    /**
-     * @dev Burn tokens can only use by owner
-     */
-    function burnTokens(uint256 tokensAmount)
-    public
-    isAdminMode
-    isOwner
-    {
-        require(_balances[msg.sender] >= tokensAmount);
-
-        _balances[msg.sender] = _balances[msg.sender].sub(tokensAmount);
-        _supply = _supply.sub(tokensAmount);
-        emit TokenBurned(msg.sender, tokensAmount);
-    }
 
 
     /**
