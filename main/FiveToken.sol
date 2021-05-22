@@ -8,10 +8,10 @@ import "../extensions/ERC20Extended.sol";
  */
 contract FiveToken is ERC20Extended {
 
-    string public constant name = "FIVE TOKEN";
-    string public constant symbol = "FVT";
+    string public constant name = "UNICUS COIN";
+    string public constant symbol = "UNIC";
     uint public constant decimals = 18;
-    uint public constant INITIAL_SUPPLY = 300000000 * (10 ** uint256(decimals));
+    uint public constant INITIAL_SUPPLY = 800000000 * (10 ** uint256(decimals));
 
 
     constructor() public {
